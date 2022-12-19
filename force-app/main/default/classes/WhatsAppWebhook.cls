@@ -20,7 +20,7 @@ global without sharing class WhatsAppWebhook {
         response.addHeader('Content-type','application/json');
         String responseString = RestContext.request.requestBody.toString();
         Map<String, String> headers = RestContext.request.headers;
-        String responseValid = validateWhatsAppSignature(RestContext.request, responseString);
+        String responseValid = validateWhatsAppSignature (RestContext.request, responseString);
         
         if(responseValid == SIGNATURE_VALID_MESSAGE){
             System.debug(System.LoggingLevel.DEBUG, ' Headers Response From WhatsApp \n  '+ JSON.serialize(headers) );
